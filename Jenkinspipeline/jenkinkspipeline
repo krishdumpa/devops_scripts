@@ -1,0 +1,33 @@
+#checkout
+#build
+#deploy
+#test
+
+stage ("checkout")
+{
+    step {
+        #checkout
+        git clone <url>
+    }
+    }
+    stage ("build")
+{
+    step {
+        #build
+       mvn clean package
+    }
+    }
+     stage ("delply")
+{
+    step {
+        #deploy
+       #copy warfile use scp
+    }
+    }
+     stage ("test")
+{
+    step {
+        #test
+       curl <url>
+    }
+    }
